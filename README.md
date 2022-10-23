@@ -156,6 +156,10 @@ Comment out the previous **addFact()** code and add this one below:
     
     
 
-When you run __node app.js__ in the terminal you should receive two separate output's in the terminal including; _Fact 0:_ output & _Total recorded facts:_ output.
+When you run __node app.js__ in the terminal you should receive two object's inside the terminal's output. IThe terminal should look similar to something like this:
+
+__Fact 0:__ "Data in a string format"
+__Total recorded facts:__ "Numeric data"
+
 ### Congratulations! You've completed the exercise!!!
    
