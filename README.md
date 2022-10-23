@@ -62,3 +62,41 @@ Then, compile the contract via solc.compile)_ and access the object that we are 
 Open a terminal on your project folder and run the following command, then examine the output.
 
     node app.js
+    
+## 1. Deploy a Smart Contract
+Now that we have compiled our ArrayOfFacts.sol smart contract, it is time to deploy it on the Ropsten Testnet.
+Retrieve one private key from MetaMask and use it as a signer for the deployment transaction. This account will also
+be the contract owner.
+
+If you do not have ETH, use the Goerli faucet: https://goerlifaucet.com/
+Export the private key (DO NOT USE an account that holds actual mainnet ETH):
+
+Save the exported privateKey in your app.js file. Don’t forget to prefix the copied key with 0x.
+
+To deploy a contract to the Ethereum Network, two things are required:
+
+• The contract’s bytecode
+• The contract’s application binary interface (ABI)
+Both are generated from the Solidity compilation process. We already have this from an earlier step and this is
+stored on our compiledContract variable.
+Import the account in web3 using the private key we got from an earlier step (see Line 37).
+Then, use web3.eth.Contract(jsonInterface [, address] [, options]), which will initialize a contract with all its
+methods defined in the json interface object.
+Since this is a deployment operation, we do not have an existing contract address of an already deployed contract to
+interact with yet. Leave this parameter as null.
+Then, add the following as additional options:
+• data – the bytecode of the contract,
+• gas – the maximum gas provided for a transaction (gas limit)
+• from – the address from which the transaction should be made.
+Finally, call the initialized contract’s deploy() function.
+If everything goes well, the promise resolves with a new contract instance and sends the transaction. When the
+deployment is successful, that means the transaction is mined. The callback function will print the contract address:
+
+Run app.js and you’ll get the deployed contract address.
+
+Verify that the contract has indeed been deployed at the Goerli Test Network by visiting:
+https://goerli.etherscan.io/address/REPLACE-THIS WITH YOUR-DEPLOYED-CONTRACT-ADDRESS
+
+If for some reason the transaction takes longer than expected, you may receive an error message. But your contract
+is still deployed and you can find it by following the address from which you deployed it in Ropsten explorer.
+
