@@ -31,3 +31,17 @@ After that, install solc-js:
 Last but not least, web3.js:
 
     npm install web3@3.0.0-rc.5
+
+## Problem 1. Dependency Installation
+To start with, create a new project on your preferred directory.
+In the directory, open a terminal and initialize a NodeJS project:
+
+    npm init –y
+    
+After that, install solc-js:
+
+    npm install solc@0.8.13
+    
+Last but not least, web3.js:
+
+    npm install web3@3.0.0-rc.5
