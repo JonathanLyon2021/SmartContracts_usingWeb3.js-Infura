@@ -10,4 +10,8 @@ contract ArrayOfFacts {
         owner = msg.sender;
     }
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, 'Only contract owner can do this!');
+        _;
+    }
 }
