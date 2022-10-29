@@ -19,4 +19,7 @@ contract ArrayOfFacts {
         facts.push(fact);
     }
     
+     function count() public view returns (uint256 factCount) {
+        return facts.length;
+    }
 }
