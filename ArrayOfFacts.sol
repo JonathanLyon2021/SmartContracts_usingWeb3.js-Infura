@@ -14,4 +14,9 @@ contract ArrayOfFacts {
         require(msg.sender == owner, 'Only contract owner can do this!');
         _;
     }
+    
+        function add(string memory fact) public onlyOwner {
+        facts.push(fact);
+    }
+    
 }
