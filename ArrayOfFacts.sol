@@ -22,4 +22,8 @@ contract ArrayOfFacts {
      function count() public view returns (uint256 factCount) {
         return facts.length;
     }
+    
+     function getFact(uint256 index) public view returns (string memory fact){
+        return facts[index];
+    }
 }
