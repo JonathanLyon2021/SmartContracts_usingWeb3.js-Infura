@@ -32,3 +32,20 @@ compiledContract = compiledContract["contracts"]["contract"]["ArrayOfFacts"];
 //console.log(compiledContract); // This will print the ABI and bytecode of the contract
 
 const privateKey = "0x78054e822a3163f67c5ff9118496cd769eeea353a2c5afd0a60424153d107a31"; // There are no funds in this wallet hackers, I see you lookin... lmao
+
+web3.eth.accounts.wallet.add(privateKey);
+const ABI = compiledContract["abi"]; // This is the ABI of the contract
+const BYTECODE = "0x" + compiledContract["evm"]["bytecode"]["object"]; // This is the bytecode of the contract
+
+let contract = new web3.eth.Contract(ABI, null, {
+    data: BYTECODE,
+    from: web3.eth.accounts.wallet[0].address, // default from address
+    gas: 4600000 // default gas limit
+});
+
+contract
+    .deploy()
+    .send()
+    .then(contractInstance => {
+        console.log("Contract created at " + contractInstance.options.address); // Prints the address of the contract
+    });
