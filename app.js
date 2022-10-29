@@ -24,3 +24,11 @@ let standardCompilerInput = {
 };
 
 standardCompilerInput = JSON.stringify(standardCompilerInput);
+
+let compiledContract = solc.compile(standardCompilerInput);
+compiledContract = JSON.parse(compiledContract);
+compiledContract = compiledContract["contracts"]["contract"]["ArrayOfFacts"];
+
+//console.log(compiledContract); // This will print the ABI and bytecode of the contract
+
+const privateKey = "0x78054e822a3163f67c5ff9118496cd769eeea353a2c5afd0a60424153d107a31"; // There are no funds in this wallet hackers, I see you lookin... lmao
