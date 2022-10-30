@@ -74,3 +74,10 @@ const contract = new web3.eth.Contract(ABI, contractAddress);
 //        console.log(transaction);
 //    });
 
+const factIndex = 0;
+contract.methods.getFact(factIndex).call().then((result) => {
+    console.log(`Fact ${factIndex}: ${result}`) })
+
+    contract.methods.count().call().then((result) => {
+        console.log(`Total recorded facts: ${result}`) 
+});
