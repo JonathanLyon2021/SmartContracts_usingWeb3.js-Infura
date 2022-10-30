@@ -49,3 +49,7 @@ contract
     .then(contractInstance => {
         console.log("Contract created at " + contractInstance.options.address); // Prints the address of the contract
     });
+
+const fact = " NASA'S Mar's Helicopter Spots Gear That Helped Perseverance Rover Land 04/27/2022";
+
+const contract = new web3.eth.Contract(ABI, contractAddress);
