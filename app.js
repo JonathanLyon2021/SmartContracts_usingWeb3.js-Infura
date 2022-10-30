@@ -53,3 +53,24 @@ contract
 const fact = " NASA'S Mar's Helicopter Spots Gear That Helped Perseverance Rover Land 04/27/2022";
 
 const contract = new web3.eth.Contract(ABI, contractAddress);
+
+//contract.methods
+//    .add(fact)
+//    .send(
+//        {
+//            from: web3.eth.accounts.wallet[0].address, // default from address
+//            gas: 4600000 // default gas limit
+//        },
+//        (err, transactionID) => {
+//            if(err){
+//                console.log(err);
+//            } else {
+//                console.log("Transaction Hash: " + transactionID);
+//            }
+//        }
+//    )
+//    .then(transaction => {
+//        console.log("Transaction Information:");
+//        console.log(transaction);
+//    });
+
